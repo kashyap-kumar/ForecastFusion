@@ -55,7 +55,7 @@ const LocationSearch = ({ onLocationSelect }) => {
         <Navbar>
             <Row className="w-100 mx-auto">
                 <Col xs={2} md={2} lg={2} className="d-flex align-items-center">
-                    <Navbar.Brand href="/" class="mx-auto">
+                    <Navbar.Brand href="/" className="mx-auto">
                         <img
                             src="/icon.svg"
                             width="56"

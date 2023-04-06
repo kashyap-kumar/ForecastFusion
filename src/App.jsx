@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 import "./App.css";
 import LocationSearch from "./components/LocationSearch";
+import NavigationBar from "./components/NavigationBar";
+import NotFound from "./components/NotFound";
 import { getCurrentWeather } from "./utils/api"
 
 function App() {
@@ -29,6 +33,21 @@ function App() {
     return (
         <div className="App">
             <LocationSearch onLocationSelect={handleLocationSelect} />
+			<Container fluid>
+				<Row>
+					<Col xs={12} md={2} className="d-md-flex justify-content-center">
+						<NavigationBar />
+					</Col>
+					<Col xs={12} md={10}>
+						<Routes>
+							<Route path="/" element={<div>Today's weather</div>} />
+							<Route path="/tomorrow" element={<div>Tomorrow's weather</div>} />
+							<Route path="/10daysforecast" element={<div>Next 10 day's weather</div>} />
+							<Route path="*" element={<NotFound />} />
+						</Routes>
+					</Col>
+				</Row>
+			</Container>
         </div>
     );
 }
