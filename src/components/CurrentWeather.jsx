@@ -91,6 +91,7 @@ const CurrentWeather = ({ weatherData }) => {
                                                     color: selectedOverview === "temp" ? "#ffffff" : "#626669",
                                                     width: "30px",
                                                     height: "30px",
+                                                    cursor: "pointer",
                                                 }}
                                                 onClick={() => setSelectedOverview("temp")}
                                             >
@@ -103,6 +104,7 @@ const CurrentWeather = ({ weatherData }) => {
                                                     color: selectedOverview === "wind" ? "#ffffff" : "#626669",
                                                     width: "30px",
                                                     height: "30px",
+                                                    cursor: "pointer",
                                                 }}
                                                 onClick={() => setSelectedOverview("wind")}
                                             >
