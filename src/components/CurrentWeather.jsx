@@ -4,6 +4,8 @@ import { WiDayCloudy, WiStrongWind, WiThermometerExterior } from "react-icons/wi
 import { TiArrowDown, TiArrowUp } from "react-icons/ti"
 import { Line, LineChart, ResponsiveContainer, XAxis, Tooltip, BarChart, Bar } from "recharts";
 import { getHourlyData } from "../utils/api";
+import weatherinfobg from "/src/assets/weather-info-bg.jpg";
+import weathermoreinfobg from "/src/assets/weather-more-info-bg.png";
 
 // test data for various time during the day (due to api limitations)
 const hourlyData = getHourlyData();
@@ -20,7 +22,7 @@ const CurrentWeather = ({ weatherData }) => {
                         <div
                             className="rounded-5 p-4"
                             style={{
-                                backgroundImage: "url('/src/assets/weather-info-bg.jpg')",
+                                backgroundImage: `url(${weatherinfobg})`,
                                 backgroundSize: "cover",
                             }}
                         >
@@ -55,7 +57,7 @@ const CurrentWeather = ({ weatherData }) => {
                         <div
                             className="rounded-5 p-4 h-100"
                             style={{
-                                backgroundImage: "url('/src/assets/weather-more-info-bg.png')",
+                                backgroundImage: `url(${weathermoreinfobg})`,
                                 backgroundSize: "cover",
                             }}
                         >
@@ -87,7 +89,8 @@ const CurrentWeather = ({ weatherData }) => {
                                             <span
                                                 className="d-inline-flex justify-content-center align-items-center me-2 rounded fs-2 p-1"
                                                 style={{
-                                                    backgroundColor: selectedOverview === "temp" ? "#f7703b" : "#c2c9c9",
+                                                    backgroundColor:
+                                                        selectedOverview === "temp" ? "#f7703b" : "#c2c9c9",
                                                     color: selectedOverview === "temp" ? "#ffffff" : "#626669",
                                                     width: "30px",
                                                     height: "30px",
@@ -100,7 +103,8 @@ const CurrentWeather = ({ weatherData }) => {
                                             <span
                                                 className="d-inline-flex justify-content-center align-items-center rounded fs-2 p-1"
                                                 style={{
-                                                    backgroundColor: selectedOverview === "wind" ? "#f7703b" : "#c2c9c9",
+                                                    backgroundColor:
+                                                        selectedOverview === "wind" ? "#f7703b" : "#c2c9c9",
                                                     color: selectedOverview === "wind" ? "#ffffff" : "#626669",
                                                     width: "30px",
                                                     height: "30px",
